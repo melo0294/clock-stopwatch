@@ -1,0 +1,84 @@
+body {
+    background: black;
+    font-family: 'Josefin Sans', sans-serif;
+    height:100%;
+}
+
+h1, p {
+    color: #17D4FE;
+}
+
+hr {
+    border-color: #6E6E6E;
+}
+
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #17D4FE;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+}
+
+/* Variabes */  
+$orange: #ffa600;
+$grey:#f3f3f3;
+$white: #fff;
+$base-color:$orange ;
+
+
+/* Mixin's */  
+@mixin transition {
+-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;
+}
+@mixin corners ($radius) {
+-moz-border-radius: $radius;
+-webkit-border-radius: $radius;
+border-radius: $radius; 
+-khtml-border-radius: $radius; 
+}
+
+.wrapper {
+width: 800px;
+margin: 30px auto;
+color:$white;
+text-align:center;
+}
+
+h1, h2, h3 {
+  font-weight: 100;
+  font-size: 2.6em;
+  text-transform: uppercase;
+}
+
+#seconds, #tens{
+  font-size:2em;
+}
+
+button{
+@include corners (5px);
+background:$base-color;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: bold;
+color:$white;
+border: solid 2px #6E6E6E;
+text-decoration:none;
+cursor:pointer;
+font-size:1.2em;
+padding:18px 10px;
+width:180px;
+margin: 10px;
+ outline: none;
+  &:hover{
+    @include transition;
+    background:$white;
+    border: solid 1px $white;
+    color:$base-color;
+    }
+}
